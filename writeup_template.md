@@ -37,6 +37,7 @@ The goals / steps of this project are the following:
 [image16]: ./output_images/output_17_1.png
 [image17]: ./output_images/output_17_2.png "Lane super-imposed"
 [image18]: ./output_images/output_19_1.png "Lane super-imposed with info"
+[image19]: ./output_images/output_3_1.png "Undistorted"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -69,6 +70,9 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![alt text][image2]
+
+Undistorted would like like: 
+![alt text][image19]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
