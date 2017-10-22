@@ -111,6 +111,7 @@ Again, using the code snippet provided in the classroom, a method was built upon
 
 A function with the name `draw_lane()` based on the snippet provided in the lectures was constructed, where it would super impose a colored lane on top of the real lane by warping it using the ivnerse calibration matrix and correction coefficients. It would basically colour between the lines.
 
+
 ![alt text][image17]
 
 Data regarding curvature and center distance were superimposed on the frames.
