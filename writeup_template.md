@@ -85,12 +85,15 @@ Trapezoidal polygon source points were used, and rectangular destination points 
 
 ![alt text][image10]
 
+All test images thresholded and transformed.
+![alt text][image11]
+
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+Using the sliding window algorithm introduced in the lectures, i implemented a function that would take an image, and execute the algorithm on it, where it would define the lane pixels and then fit a second-order polynomial describing the lanes. To decrease computation, the output of the sliding window algorithm ie: Lane indices and polynomial coefficants, were used as a starting point and as a search margin for a faster function, that instead of searching the whole image for lane lines, started off with what the original function outputted and a margin.
 
-![alt text][image5]
+![alt text][image14]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
