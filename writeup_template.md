@@ -23,20 +23,20 @@ The goals / steps of this project are the following:
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
-[image7]: ./output_images/output_2_1.jpg "Calibration"
-[image8]: ./output_images/output_6_1.jpg
-[image9]: ./output_images/output_6_2.jpg "Road thresholded"
-[image10]: ./output_images/output_6_3.jpg "Road thresholded & transformed"
-[image11]: ./output_images/output_7_0.jpg "Test images pipelined"
-[image12]: ./output_images/output_9_1.jpg 
-[image13]: ./output_images/output_9_2.jpg
-[image14]: ./output_images/output_11_1.jpg "Sliding window"
-[image15]: ./output_images/output_13_1.jpg "Sliding window based on prev"
-[image16]: ./output_images/output_17_1.jpg
-[image17]: ./output_images/output_17_2.jpg "Lane super-imposed"
-[image18]: ./output_images/output_19_1.jpg "Lane super-imposed with info"
+[image5]: ./examples/color_fit_lines.png "Fit Visual"
+[image6]: ./examples/example_output.png "Output"
+[image7]: ./output_images/output_2_1.png "Calibration"
+[image8]: ./output_images/output_6_1.png
+[image9]: ./output_images/output_6_2.png "Road thresholded"
+[image10]: ./output_images/output_6_3.png "Road thresholded & transformed"
+[image11]: ./output_images/output_7_0.png "Test images pipelined"
+[image12]: ./output_images/output_9_1.png 
+[image13]: ./output_images/output_9_2.png
+[image14]: ./output_images/output_11_1.png "Sliding window"
+[image15]: ./output_images/output_13_1.png "Sliding window based on prev"
+[image16]: ./output_images/output_17_1.png
+[image17]: ./output_images/output_17_2.png "Lane super-imposed"
+[image18]: ./output_images/output_19_1.png "Lane super-imposed with info"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
