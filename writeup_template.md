@@ -72,7 +72,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I thresholded the Red and Green channels, and bitwise-anded them to detect yellow lanes. I used the L channel from the hls version of the image as it works well even when there are different lighting conditions. And used the s channed along with the direction and x gradient of the image to detect the lanes. I then bitwise-ored them to obtain a robust thresholding function that works well throughout the video. A trapezoidal mask was used to remove outliers and only show the lane section of the image, which contains all the information needed.
+I thresholded the Red and Green channels, and bitwise-anded them to detect yellow lanes. I used the L channel from the hls version of the image as it works well even when there are different lighting conditions. And used the s channed along with the direction and x gradient of the image to detect the lanes. I then bitwise-ored them to obtain a robust thresholding function that works well throughout the video. A trapezoidal mask was used to remove outliers and only show the lane section of the image, which contains all the information needed. Function name : `get_thresholded()`
 
 ![alt text][image9]
 
@@ -80,7 +80,7 @@ I thresholded the Red and Green channels, and bitwise-anded them to detect yello
 
 I use a function that undistorts, thresholds, and then warps the images provided as input. Simple opecv getPerspective and warpPerspective functions were used, by provided the camera calibration matrix and correction coefficients obtained in the camera calibration stage.
 
-Trapezoidal polygon source points were used, and rectangular destination points were used.
+Trapezoidal polygon source points were used, and rectangular destination points were used. Function name: `undistort_warp()`
 
 
 ![alt text][image10]
@@ -91,19 +91,28 @@ All test images thresholded and transformed.
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Using the sliding window algorithm introduced in the lectures, i implemented a function that would take an image, and execute the algorithm on it, where it would define the lane pixels and then fit a second-order polynomial describing the lanes. To decrease computation, the output of the sliding window algorithm ie: Lane indices and polynomial coefficants, were used as a starting point and as a search margin for a faster function, that instead of searching the whole image for lane lines, started off with what the original function outputted and a margin.
+Using the sliding window algorithm introduced in the lectures, i implemented a function that would take an image, and execute the algorithm on it, where it would define the lane pixels and then fit a second-order polynomial describing the lanes. To decrease computation, the output of the sliding window algorithm ie: Lane indices and polynomial coefficants, were used as a starting point and as a search margin for a faster function, that instead of searching the whole image for lane lines, started off with what the original function outputted and a margin. Function name is `sliding_window_polyfit()`
 
 ![alt text][image14]
 
+Sliding window algorithm with a search margin. Function name is `polyfit_using_prev_fit()`
+
+![alt text][image15]
+
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+Again, using the code snippet provided in the classroom, a method was built upon it, where it calculated the curvature of the polynomials using a mathematical formula explained in the lectures. Function name is `curv()`
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+A function with the name `draw_lane()` based on the snippet provided in the lectures was constructed, where it would super impose a colored lane on top of the real lane by warping it using the ivnerse calibration matrix and correction coefficients. It would basically colour between the lines.
 
-![alt text][image6]
+![alt text][image17]
+
+Data regarding curvature and center distance were superimposed on the frames.
+
+![alt text][image18]
+
 
 ---
 
@@ -111,7 +120,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_output.mp4)
 
 ---
 
@@ -119,4 +128,4 @@ Here's a [link to my video result](./project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+
