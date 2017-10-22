@@ -91,7 +91,7 @@ All test images thresholded and transformed.
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Using the sliding window algorithm introduced in the lectures, i implemented a function that would take an image, and execute the algorithm on it, where it would define the lane pixels and then fit a second-order polynomial describing the lanes. To decrease computation, the output of the sliding window algorithm ie: Lane indices and polynomial coefficants, were used as a starting point and as a search margin for a faster function, that instead of searching the whole image for lane lines, started off with what the original function outputted and a margin. Function name is `sliding_window_polyfit()`
+Using a histogram to define where lane pixels are condensed, and using the sliding window algorithm introduced in the lectures, i implemented a function that would take an image, and execute the algorithm on it, where it would define the lane pixels and then fit a second-order polynomial describing the lanes. To decrease computation, the output of the sliding window algorithm ie: Lane indices and polynomial coefficants, were used as a starting point and as a search margin for a faster function, that instead of searching the whole image for lane lines, started off with what the original function outputted and a margin. Function name is `sliding_window_polyfit()`
 
 ![alt text][image14]
 
@@ -129,3 +129,4 @@ Here's a [link to my video result](./project_video_output.mp4)
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 
+It took me a long time experimenting with different types of gradients, color spaces, and thresholds. With the help of the forum i was able to understand more about the effects of each choice and reach a resonably robust thresholding function for the project video. Understanding how to use the result of fitting through each stage in the processing and using them in sequentially was hard to understand for a while but i got around to it. At some stages of the video, lane lines could not be identified and my algorithms fail, and caused the processing to stop, so i averaged a number of previous lines to figure out where the undetected lanes, because logically it would not just magically turn 90 degrees over. A more robust thresholding technique, and better sanity check would definietely better the pipeline, and i will be working this project again, after i am done with the deadlines, as it is rich in material and experimentation
